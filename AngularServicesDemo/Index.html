@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app="webAdminApp" >
+<head>
+    <title>Angular Services</title>
+    <script src="app/libraries/angular.min.js"></script>
+    <script src="app/libraries/angular-route.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/services/userService.js"></script>
+    <script src="app/factories/userFactory.js"></script>
+    <script src="app/controllers/AccountController.js"></script>
+    <script src="app/controllers/IndexController.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h4>Angular Services</h4>
+
+        <nav>
+            <a href="#/">Home</a> &nbsp; &nbsp;
+            <a href="#/about">about</a> &nbsp; &nbsp;
+            <a href="#/contact">contact</a> &nbsp; &nbsp;
+            
+            <span ng-hide="isAuthenticated">
+            <a href="#/register">Register</a> &nbsp; &nbsp;
+            <a href="#/login">Login</a>
+            </span>
+
+            <span ng-show="isAuthenticated">
+                <a href="#/logout">Logout</a>
+            </span>
+        </nav>
+    </div>
+
+
+    <div id="content">
+        <div ng-view></div>
+    </div>
+
+    <div id="footer">
+        &copy; Sijia 2015
+    </div>
+</body>
+</html>
